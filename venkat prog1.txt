@@ -1,0 +1,21 @@
+def change_ip(file):
+        f=open(file) 
+        x=[]            
+        y=[]
+        c= []
+        d= []
+        for line in f:
+                line=line.strip()
+                line=line.split()
+                x.append(line)
+        for i in  range(len(x)):
+                if x[i] == "ip" and x[i+1] == "address" : 
+                        y.append(x[i+2])
+        for i in  y: 
+                c.append(i.split('.'))  
+        for i in c:
+                i[0]=10            
+                d.append('.'.join(i))
+        return d
+print(change_ip("running-config.cfg"))
+

@@ -1,0 +1,11 @@
+def access(file):
+	files=open(file)    
+	list1=[]            
+	for line in file:
+		line=line.strip()
+		for i in line.split():
+			if i=="global_access" or i=="fw-management_access_in":  
+				list1.append(line) 
+	return list1
+file="running-config.cfg"
+print(access(file))
